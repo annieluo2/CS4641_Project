@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #b0e0e6">
+    <nav class="navbar fixed-top navbar-expand-sm navbar-light" style="background-color: #b0e0e6">
         <a class="navbar-brand" href="#"><b>homedemic</b></a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -56,9 +56,9 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
+    <div class="jumbotron-fluid" style="background-color: black; padding-top: 90px; padding-bottom: 50px;"> 
         <div class="row">
-            <div class="col-sm-6" style="border-right: 1px dashed white; text-align: right;">
+            <div class="col-sm-6" style="border-right: 1px dashed white; text-align: right; color: white;">
                 <h1>homedemic</h1>
                 <h4>Charting the impact of COVID-19 on housing demand nationwide</h4>
               </div>
@@ -70,14 +70,14 @@
               </div>
           </div>
       </div>
-    <div class="jumbotron-fluid" id="summary" style="padding-top: 50px; padding-bottom: 50px; color: white; background-color: black;">
+    <div class="jumbotron-fluid" id="summary" style="padding-top: 50px; padding-bottom: 50px; background-color: white;">
         <img src="Infographic.png" width="100%" height="100%" alt="hi" class="center"/>
     </div>    
     <div class="jumbotron-fluid" id="introduction" style="padding-top: 50px; padding-bottom: 50px; background-color: #B0E0E6; color: black;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8" style="text-align: right;">
-                    <p>We are addressing the impact of COVID-19 on the housing market in the United States. Despite the economic downturn caused by the virus, we noticed from people close to us buying homes and from the news that the market was very much still active. According to a Pew Research Center article by D’Vera Cohn, almost one-fourth of U.S. adults moved due to COVID-19 or knew someone who moved. Additionally, Andrew Murfett mentions in his LinkedIn News post that the dropping median list price in San Francisco as apartment dwellers move out. These are a few examples of the sources of motivation for our project. We plan to use supervised and unsupervised machine learning techniques to see if there is a correlation between COVID-19 case data and housing sales for major metro areas.
+                    <p>We are addressing the impact of COVID-19 on the housing market in the United States. Despite the economic downturn caused by the virus, we noticed from people close to us buying homes and from the news that the market was very much still active. According to a Pew Research Center article by D’Vera Cohn [5], almost one-fourth of U.S. adults moved due to COVID-19 or knew someone who moved. Additionally, Andrew Murfett [4] mentions in his LinkedIn News post that the dropping median list price in San Francisco as apartment dwellers move out. These are a few examples of the sources of motivation for our project. We plan to use supervised and unsupervised machine learning techniques to see if there is a correlation between COVID-19 case data and housing sales for major metro areas.
                     </p>
                 </div>
                 <div class="col-sm-4" style="border-left: 1px dashed black;">
@@ -95,10 +95,10 @@
                 <div class="col-sm-8" style="text-align: left;">
                     <p><b>John Hopkins COVID-19 Dataset:</b> The set is broken down into positive coronavirus cases by county and states. There is data on other countries as well, but we will be focusing on the cases in the United States This dataset includes the location of the positive cases in order to compare the concentration of metro area positives to metro area housing sales. </p>
                     <p><b>Zillow Dataset:</b> This set contains information on median days to pending (how long it took for a house to sell), for-sale inventory, and the list and sale prices of houses in the United States. This will show us housing sale rates in order to see how they have changed with the recent pandemic.</p>
-                    <p>For data preprocessing, since Zillow makes a separate excel sheet for each of the different features concerning houses sales (median days to pending, for sale inventory, sale prices, etc.), we will need to put each of these features into one dataset. The data is provided on a weekly basis, but we will be disregarding the dates and just collecting the data points for a location.</p>
-                    <p>For the supervised algorithm, we plan on using regression. We will first build a model with pre-COVID housing data to determine how long it took to sell a house in a metro area. Then we will build another model with the combined housing and COVID-19 data during the pandemic to make the same determination. Next we will see which has a better accuracy when it comes to predicting future amounts of time it will take to sell houses in a metro area.</p>
-                    <p>For the unsupervised algorithm, we plan on using clustering such as KMeans, t-SNE, etc. We will cluster the time it took to sell houses by location (such as a region of the United States): first clustering with just the pre-COVID housing data once again and then overlaying the cluster model with combined housing and COVID-19 data during the pandemic. This will give us an idea of how popular an area is as far as housing demand goes and how that has changed if at all due to COVID-19.</p>
-                    <p>To determine which of the two models in both learning portions are better, we can see how our results from each model compare to the latest median of time taken for houses to sell in the market (i.e. use the last month or last two months of housing data as testing data and the previous data as training data). For the unsupervised portion when we use different types of clustering algorithms such as KMeans, t-SNE, etc., we will compare their results to pick the best clustering algorithm (density-based, expectation-maximization, etc.) for determining location clusters.</p>
+                    <p><b>Data preprocessing:</b> since Zillow makes a separate excel sheet for each of the different features concerning houses sales (median days to pending, for sale inventory, sale prices, etc.), we will need to put each of these features into one dataset. The data is provided on a weekly basis, but we will be disregarding the dates and just collecting the data points for a location.</p>
+                    <p><b>Supervised Algorithm:</b> we plan on using regression. We will first build a model with pre-COVID housing data to determine how long it took to sell a house in a metro area. Then we will build another model with the combined housing and COVID-19 data during the pandemic to make the same determination. Next we will see which has a better accuracy when it comes to predicting future amounts of time it will take to sell houses in a metro area.</p>
+                    <p><b>Unsupervised Algorithm:</b>, we plan on using clustering such as KMeans, t-SNE, etc. We will cluster the time it took to sell houses by location (such as a region of the United States): first clustering with just the pre-COVID housing data once again and then overlaying the cluster model with combined housing and COVID-19 data during the pandemic. This will give us an idea of how popular an area is as far as housing demand goes and how that has changed if at all due to COVID-19.</p>
+                    <p><b>Analysis:</b> To determine which of the two models in both learning portions are better, we can see how our results from each model compare to the latest median of time taken for houses to sell in the market (i.e. use the last month or last two months of housing data as testing data and the previous data as training data). For the unsupervised portion when we use different types of clustering algorithms such as KMeans, t-SNE, etc., we will compare their results to pick the best clustering algorithm (density-based, expectation-maximization, etc.) for determining location clusters.</p>
                 </div>
             </div>
         </div>
@@ -134,7 +134,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8" style="text-align: center;">
-                    Lorem Ipsum blah blah blah
+                    <p>
+                        [1] Banerjee, Debanjan, and Suchibrota Dutta. 2017. Predicting the housing price direction using machine learning techniques. 2017 IEEE International Conference on Power, Control, Signals and Instrumentation Engineering (ICPCSI). DOI: 10.1109/ICPCSI.2017.8392275
+                    </p>
+                    <p>
+                        [2] Byeonghwa Park and Jae Kwon Bae. 2015. Using machine learning algorithms for housing price prediction: The case of Fairfax County, Virginia housing data. 
+                        Expert Systems with Applications 42, 6 (2015): 2928-2934. DOI: https://doi.org/10.1145/1188913.1188915                        
+                    </p>
+                    <p>
+                        [3] Zhou, Wei-Xing, and Didier Sornette. 2008. Analysis of the real estate market in Las Vegas: Bubble, seasonal patterns, and prediction of the CSW indices. Physica A: Statistical Mechanics and its Applications, Vol 387.1 (Jan. 2008), 243-260. DOI: https://doi.org/10.1016/j.physa.2007.08.059
+                    </p>
+                    <p>
+                        [4] Andrew Murfett. 2020. Who’s actually leaving SF? (October 2020). Retrieved October 1, 2020 from https://www.linkedin.com/feed/news/whos-actually-leaving-sf-4238041/.
+                    </p>
+                    <p>
+                        [5] D’Vera Cohn. 2020. About a fifth of U.S. adults moved due to COVID-19 or know someone who did. (July 2020). Retrieved October 2, 2020 from https://www.pewresearch.org/fact-tank/2020/07/06/about-a-fifth-of-u-s-adults-moved-due-to-covid-19-or-know-someone-who-did/
+                    </p>
                 </div>
                 <div class="col-sm-4" style="border-left: 1px dashed black;">
                     <h1>References</h1>

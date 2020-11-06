@@ -140,10 +140,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8" style="text-align: right;">
-                    <p>
-                      How did we cluster (number of clusters, data sets, how we cleaned the data), add the clustering images
-                    </p>
-                </div>
+                  <p>
+                    How did we cluster (number of clusters, data sets, how we cleaned the data), add the clustering images
+                  </p>
+                  <p>
+                    The Zillow housing datasets were organized by metropolitan statistical areas (MSAs), and we chose the top 19 MSAs because they had the least amount of information missing due to being major cities such as New York City and Los Angeles. Housing data points were provided on a weekly basis. To combine this dataset with the COVID dataset which gave daily case information by county, we summed up the points to the same week day to give a weekly total, and we combined counties’ data within an MSA.
+                  </p>
+                  <p>
+                    The data does not contain many outliers because we went through and eliminated any extraneous data before performing our unsupervised learning algorithms. But there might be a few outliers where the houses were extremely expensive or the housing market in the area tanked for a little bit.
+                  </p>  
+              </div>
                 <div class="col-sm-4" style="border-left: 1px dashed black;">
                     <h1>Process</h1>
                 </div>

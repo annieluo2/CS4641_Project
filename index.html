@@ -42,26 +42,13 @@
                 <a href="#Lorem_Ipsum">top</a>
                 -->
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="#summary">summary</a>
+                    <a class="nav-link" style="color: black;" href="Touchpoint1.html">Touchpoint 1</a>
                 </li>
                 <br>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="#introduction">introduction</a>
+                    <a class="nav-link" style="color: black;" href="Touchpoint2.html">Touchpoint 2</a>
                 </li>
                 <br>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="#methods">methods</a>
-                </li>
-                <br>  
-                <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="#results">results</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="#discussion">discussion</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="#references">references</a>
-                </li>
             </ul>
         </div>
     </nav>
@@ -72,7 +59,7 @@
                 <h4>Charting the impact of COVID-19 on housing demand nationwide</h4>
               </div>
               <div class="col-sm-6" style="text-align: left; color: #B0E0E6">
-                  <h4> Sukriti Bhardwaj </h4>
+                  <h4> Sukriti Bhardwaj HOME </h4>
                   <h4> Sumedh Garimella </h4>
                   <h4> Annie Luo </h4>
                   <h4> Michelle Yang </h4>
@@ -84,11 +71,11 @@
     <div class="jumbotron-fluid" id="summary" style="padding-top: 50px; padding-bottom: 50px; background-color: white;">
         <img src="Infographic.png" width="100%" height="100%" alt="hi" class="center"/>
     </div>    
-    <div class="jumbotron-fluid" id="introduction" style="padding-top: 50px; padding-bottom: 50px; background-color: #B0E0E6; color: black;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8" style="text-align: right;">
-                    <p>We are addressing the impact of COVID-19 on the housing market in the United States. Despite the economic downturn caused by the virus, we noticed from people close to us buying homes and from the news that the market was very much still active. According to a Pew Research Center article by D’Vera Cohn [5], almost one-fourth of U.S. adults moved due to COVID-19 or knew someone who moved. Additionally, Andrew Murfett [4] mentions in his LinkedIn News post that the dropping median list price in San Francisco as apartment dwellers move out. These are a few examples of the sources of motivation for our project. We plan to use supervised and unsupervised machine learning techniques to see if there is a correlation between COVID-19 case data and housing sales for major metro areas.
+                    <p>
+                      Please click on a link to get started
                     </p>
                 </div>
                 <div class="col-sm-4" style="border-left: 1px dashed black;">
@@ -96,78 +83,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="jumbotron-fluid" id="methods" style="padding-top: 50px; padding-bottom: 50px; color: #B0E0E6; background-color: white; color: black;">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4" style="border-right: 1px dashed powderblue; text-align: right;">
-                    <h1>Methods</h1>
-                </div>
-                <div class="col-sm-8" style="text-align: left;">
-                    <p><b>John Hopkins COVID-19 Dataset:</b> The set is broken down into positive coronavirus cases by county and states. There is data on other countries as well, but we will be focusing on the cases in the United States This dataset includes the location of the positive cases in order to compare the concentration of metro area positives to metro area housing sales. </p>
-                    <p><b>Zillow Dataset:</b> This set contains information on median days to pending (how long it took for a house to sell), for-sale inventory, and the list and sale prices of houses in the United States. This will show us housing sale rates in order to see how they have changed with the recent pandemic.</p>
-                    <p><b>Data Preprocessing:</b> Since Zillow makes a separate excel sheet for each of the different features concerning houses sales (median days to pending, for sale inventory, sale prices, etc.), we will need to put each of these features into one dataset. The data is provided on a weekly basis, but we will be disregarding the dates and just collecting the data points for a location.</p>
-                    <p><b>Supervised Algorithm:</b> We plan on using regression. We will first build a model with pre-COVID housing data to determine how long it took to sell a house in a metro area. Then we will build another model with the combined housing and COVID-19 data during the pandemic to make the same determination. Next we will see which has a better accuracy when it comes to predicting future amounts of time it will take to sell houses in a metro area.</p>
-                    <p><b>Unsupervised Algorithm:</b> We plan on using clustering such as KMeans, t-SNE, etc. We will cluster the time it took to sell houses by location (such as a region of the United States): first clustering with just the pre-COVID housing data once again and then overlaying the cluster model with combined housing and COVID-19 data during the pandemic. This will give us an idea of how popular an area is as far as housing demand goes and how that has changed if at all due to COVID-19.</p>
-                    <p><b>Analysis:</b> To determine which of the two models in both learning portions are better, we can see how our results from each model compare to the latest median of time taken for houses to sell in the market (i.e. use the last month or last two months of housing data as testing data and the previous data as training data). For the unsupervised portion when we use different types of clustering algorithms such as KMeans, t-SNE, etc., we will compare their results to pick the best clustering algorithm (density-based, expectation-maximization, etc.) for determining location clusters.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="jumbotron-fluid" id="results" style="padding-top: 50px; padding-bottom: 50px; background-color: #B0E0E6; color: black;">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8" style="text-align: right;">
-                    <p><b>Supervised Learning:</b> We expect to see about a 90% accuracy when our model with the combined housing and covid dataset is run on the testing dataset (latest months). We would anticipate a lower accuracy, maybe around 80%, for the model based on only the pre-COVID housing sale data.</p>
-                    <p><b>Unsupervised Learning:</b> We expect to see well-clustered data by region, and we would want the average time it takes for houses to sell within a region. Then we can better observe trends in the demand for those regions.</p>
-                </div>
-                <div class="col-sm-4" style="border-left: 1px dashed black;">
-                    <h1>Results</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="jumbotron-fluid" id="discussion" style="padding-top: 50px; padding-bottom: 50px; background-color: white; color: black;">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4" style="border-right: 1px dashed powderblue; text-align: right;">
-                    <h1>Discussion</h1>
-                </div>
-                <div class="col-sm-8" style="text-align: left;">
-                    <p>The best outcome for the supervised learning portion would be determining that the model with combined housing sale data and COVID-19 case data had a better accuracy than the one with only pre-COVID housing sale data. For the unsupervised portion, we would also want to see that the combined model had a closer average sale time by region than the non-combined model.</p>
-                    <p>This would mean that the number of COVID-19 cases in a metro area has had an effect on the housing market in terms of the rate of the sales.</p>
-                    <p>What would happen next would be determining any outlying factors that could also have an effect on housing sales. One example could be the amount of companies in an area allowing employees to work from home.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="jumbotron-fluid" id="references" style="padding-top: 50px; padding-bottom: 50px; background-color: #B0E0E6; color: black;">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8" style="text-align: center;">
-                    <p>
-                        [1] Banerjee, Debanjan, and Suchibrota Dutta. 2017. Predicting the housing price direction using machine learning techniques. 2017 IEEE International Conference on Power, Control, Signals and Instrumentation Engineering (ICPCSI). DOI: 10.1109/ICPCSI.2017.8392275
-                    </p>
-                    <p>
-                        [2] Byeonghwa Park and Jae Kwon Bae. 2015. Using machine learning algorithms for housing price prediction: The case of Fairfax County, Virginia housing data. 
-                        Expert Systems with Applications 42, 6 (2015): 2928-2934. DOI: https://doi.org/10.1145/1188913.1188915                        
-                    </p>
-                    <p>
-                        [3] Zhou, Wei-Xing, and Didier Sornette. 2008. Analysis of the real estate market in Las Vegas: Bubble, seasonal patterns, and prediction of the CSW indices. Physica A: Statistical Mechanics and its Applications, Vol 387.1 (Jan. 2008), 243-260. DOI: https://doi.org/10.1016/j.physa.2007.08.059
-                    </p>
-                    <p>
-                        [4] Andrew Murfett. 2020. Who’s actually leaving SF? (October 2020). Retrieved October 1, 2020 from https://www.linkedin.com/feed/news/whos-actually-leaving-sf-4238041/.
-                    </p>
-                    <p>
-                        [5] D’Vera Cohn. 2020. About a fifth of U.S. adults moved due to COVID-19 or know someone who did. (July 2020). Retrieved October 2, 2020 from https://www.pewresearch.org/fact-tank/2020/07/06/about-a-fifth-of-u-s-adults-moved-due-to-covid-19-or-know-someone-who-did/
-                    </p>
-                </div>
-                <div class="col-sm-4" style="border-left: 1px dashed black;">
-                    <h1>References</h1>
-                </div> 
-            </div>
-        </div>
-    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -117,7 +117,7 @@
             <div class="row">
                 <div class="col-sm-8" style="text-align: right;">
                     <p>
-                      We are trying to find a correlation between the number of COVID-19 cases and the median days pending to sale (MDPS) using unsupervised learning, namely clustering algorithms so that we can eventually predict future MDPS values. To do this, we are utilizing housing datasets from Zillow as well as a Johns Hopkins COVID-19 case dataset.
+                      We are trying to find a correlation between the number of COVID-19 cases and the median days pending to sale (MDPS) using unsupervised learning, namely clustering algorithms so that we can eventually predict future MDPS values. This is a regression problem because our target is the numeric values of median days pending to sale. The range of our values is 7-80 days though we split them into categories for our clustering algorithms to reduce it. To do this, we are utilizing housing datasets from Zillow as well as a Johns Hopkins COVID-19 case dataset.
                     </p>
                 </div>
                 <div class="col-sm-4" style="border-left: 1px dashed black;">
@@ -172,19 +172,25 @@
         </div>
     </div>
     <div class="jumbotron-fluid" id="visualizations" style="padding-top: 50px; padding-bottom: 50px; background-color: #B0E0E6; color: black;">
+        <div style="text-align: center;">
+          <h1>Visualizations</h1>
+        </div>
+      
         <div class="container">
             <div class="row">
-                <div class="col-sm-8" style="text-align: center;">
-                  <h3> Correlation Matrices </h3>
-                  <img src="CorrelationPre.png" width="400" height="400" alt="pic" class="center"/>
-                  <img src="CorrelationDuring.png" width="400" height="400" alt="pic" class="center"/>
+                <div class="col-sm-4" style="text-align: center;">
+                  <img src="CorrelationPre.png" width="400" height="400" alt="pic" class="center"/>                  
                 </div>
-                <div class="col-sm-4" style="border-left: 1px dashed black;">
-                    <h1>Visualizations</h1>
-                </div> 
+                <div class="col-sm-4" style="text-align: center;">
+                  <img src="CorrelationDuring.png" width="400" height="400" alt="pic" class="center"/>                  
+                </div>
+                <div class="col-sm-4" style="text-align: center;">
+                  <img src="CorrelationHousingCovid.png" width="400" height="400" alt="pic" class="center"/>                  
+                </div>
             </div>
         </div>
     </div>
+    
         <div class="jumbotron-fluid" id="conclusion" style="padding-top: 50px; padding-bottom: 50px; background-color: white; color: black;">
         <div class="container">
             <div class="row">

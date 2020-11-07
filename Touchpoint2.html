@@ -242,9 +242,15 @@
                 <div class="col-sm-8" style="text-align: right;">
                   <p>
                     We noticed that clustering based on K-means and GMM didn’t help us find a relationship between these features because it’s based on the ratio of the median sale price and for-sale inventory. We attempted to evaluate the clusters by using F1 score, which calculates our model’s precision (proportion of correct to incorrect predictions) and recall (proportion of points that we correctly predicted). Since K-means clustering assigned random cluster numbers rather than attempting to create a cluster labeled for each metropolitan area for which we generated combined housing-COVID datasets for, we had F1 scores of 0.1 (signifying very low precision and recall) on each attempt to cluster using COVID cases and median days pending to sale in a metro area. Therefore, unless we can create clusters with the metro area labels, F1 score on our K-means clustering does not give us any useful insights. 
+                  </p>
+                  <p>
+                     This was an attempt to use K-means clustering (with 19 clusters) with the 19 metropolitan areas included over a 30 week period from January to August 2020 over the features of COVID cases and median days pending to sale. However, we could not find many generic correlations between COVID cases in a city and median days pending to sale, as many of our clusters ended up depicting either a constant case count or an insignificant variance in median days pending to sale. If we removed the weeks where a metro area had 0 cases, this could potentially provide more useful clusters, but would cause many discrepancies between the number of timepoints each city is represented by in the dataset.
+                  </p>
+                  <p>
+                     We used DBSCAN to find outliers when we clustered the median sale price and for-sale inventory. As we can see in the given plot, the purple points represent the outliers as they are the points which could not be fit into any cluster. 
                   </p> 
                 <div class="col-sm-4" style="border-left: 1px dashed black;">
-                    <h1> </h1>
+                    <img src="Kmeans2.png" width="300" height="300" alt="pic" class="center"/> 
                 </div>
             </div>
         </div>

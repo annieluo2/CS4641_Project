@@ -93,7 +93,7 @@
                 </li>
                 <br>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="#visualizations">visualizations</a>
+                    <a class="nav-link" style="color: black;" href="#clustering">clustering algorithms</a>
                 </li>
                 <br>
                 <li class="nav-item">
@@ -170,25 +170,49 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="jumbotron-fluid" id="visualizations" style="padding-top: 50px; padding-bottom: 50px; background-color: #B0E0E6; color: black;">
-        <div style="text-align: center;">
-          <h1>Visualizations</h1>
-        </div>
-      
+        <div class="container">
+              <div class="row">
+                  <div class="col-sm-4" style="text-align: center;">
+                    <img src="CorrelationPre.png" width="300" height="300" alt="pic" class="center"/>                  
+                  </div>
+                  <div class="col-sm-4" style="text-align: center;">
+                    <img src="CorrelationDuring.png" width="300" height="300" alt="pic" class="center"/>                  
+                  </div>
+                  <div class="col-sm-4" style="text-align: center;">
+                    <img src="CorrelationHousingCovid.png" width="300" height="300" alt="pic" class="center"/>                  
+                  </div>
+              </div>
+          </div>
+      </div>
+    <div class="jumbotron-fluid" id="clustering" style="padding-top: 50px; padding-bottom: 50px; background-color: #B0E0E6; color: black;">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4" style="text-align: center;">
-                  <img src="CorrelationPre.png" width="300" height="300" alt="pic" class="center"/>                  
-                </div>
-                <div class="col-sm-4" style="text-align: center;">
-                  <img src="CorrelationDuring.png" width="300" height="300" alt="pic" class="center"/>                  
-                </div>
-                <div class="col-sm-4" style="text-align: center;">
-                  <img src="CorrelationHousingCovid.png" width="300" height="300" alt="pic" class="center"/>                  
+                <div class="col-sm-8" style="text-align: right;">
+                  <p>
+                    The clustering algorithms that we used are PCA, KMeans, DBSCAN, and GMM. Our objectives for the algorithms were to find relationships between our features, determine the outliers, and to gain a better understanding of our datasets. For PCA, since we were only dealing with 2-3 features (housing data and/or COVID case data), we realized that we did not need its dimensionality reducing features, but it helped us visualize our data. We altered the range of values to the following to better visualize how values were clustered if at all:
+                  </p> 
+                  <p>
+                    0: 0-19 days
+                  </p>
+                  <p>
+                    1: 20-39 days
+                  </p>
+                  <p>
+                    2: 40-59 days
+                  </p>
+                  <p>
+                    3: 60-79 days
+                  </p>
+                  <p>
+                    Graphing 2 principal components, we see that our target values (MDPS) are scattered across multiple clusters. For the Pre-COVID Housing Dataset, we can see that some of them generally stick to one area (0’s in the middle right, 2’s in the top left and bottom center, and 3’s in the top left) despite overlapping. Between the two PCA graphs during COVID, there doesn’t seem to be a clearer relationship with the combined housing and COVID dataset compared to the dataset with only the housing data.
+                  </p>
+              </div>
+                <div class="col-sm-4" style="border-left: 1px dashed black;">
+                    <h1>Data Cleaning</h1>
                 </div>
             </div>
         </div>
+      
     </div>
     
         <div class="jumbotron-fluid" id="conclusion" style="padding-top: 50px; padding-bottom: 50px; background-color: white; color: black;">

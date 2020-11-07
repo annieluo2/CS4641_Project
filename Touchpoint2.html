@@ -89,7 +89,7 @@
                 </li>
                 <br>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="#results">results</a>
+                    <a class="nav-link" style="color: black;" href="#analysis">analysis</a>
                 </li>
                 <br>
                 <li class="nav-item">
@@ -150,15 +150,18 @@
             </div>
         </div>
     </div>
-    <div class="jumbotron-fluid" id="results" style="padding-top: 50px; padding-bottom: 50px; background-color: white; color: black;">
+    <div class="jumbotron-fluid" id="analysis" style="padding-top: 50px; padding-bottom: 50px; background-color: white; color: black;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4" style="border-right: 1px dashed powderblue; text-align: right;">
-                    <h1>Results</h1>
+                    <h1>Feature Selection and Analysis</h1>
                 </div>
                 <div class="col-sm-8" style="text-align: left;">
                     <p>
-                      What we learned goes here
+                      We created correlation matrices to analyze the relationships between our features (median list price, median sale price, for-sale inventory, and COVID cases) and the target variable (MDSP). From our matrices we determined that we could get rid of median list price as a feature because it was highly correlated with median sale price (0.98). We decided to keep median sale price as a feature because median list price has the lower correlation with the target variable (-0.16 or -0.19) in all three models though median sale price still has a relatively low correlation with our target variable. Our final features were median sale price (MSP), for-sale inventory (FSI), and COVID cases.
+                    </p>
+                    <p>
+                      With our final features and target variable, we observed a positive correlation between MDPS and FSI. There was a slight positive correlation between COVID cases & MDPS and COVID cases & FSI. COVID cases had very little correlation with MSP. There was a slight negative correlation between MSP & FSI and MSP & MDPS.
                     </p>
                 </div>
             </div>

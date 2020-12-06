@@ -199,11 +199,10 @@
             </div>
             <br>
             <div class="row">
-              <div class="col-sm-8" style="test-alight: left;">
                 <div class="col-sm-4" style="border-left: 1px dashed black;">
                     <h1>PCA</h1>
                 </div>
-                <div>
+                <div class="col-sm-8" style="test-alight: left;">
                 <p>For PCA, since we were only dealing with 2-3 features (housing data of median-days-pending and median list/sale price along with COVID case data depending on what time frame we were looking at), we realized that we did not need its dimensionality reducing feature. However, it did help us visualize our data and determine if any relationships existed between the data. We ended up creating 4 bins to divide up the median-days-pending data in order to better visualize how values were clustered, if at all. The following ranges were how we broke up our data:</p>
                 <p>
                   0: 0-19 days
@@ -254,11 +253,37 @@
                   <p>The graph labeled “K-means Two Feature Analysis” was an attempt to use K-means clustering (with 19 clusters) with the 19 metropolitan areas included over a 30 week period from January to August 2020 over the features of COVID cases and median days pending to sale. However, we could not find many generic correlations between COVID cases in a city and median days pending to sale, as many of our clusters ended up depicting either a constant case count or an insignificant variance in median days pending to sale. If we removed the weeks where a metro area had 0 cases, this could potentially provide more useful clusters, but would cause many discrepancies between the number of timepoints each city is represented by in the dataset.</p>
                   <p>We used DBSCAN to find outliers when we clustered the median sale price and for-sale inventory. As we can see in the given plot labeled DBSCAN in the algorithms section, the purple points represent the outliers as they are the points which could not be fit into any cluster.</p>
             </div>
-            <div class="col-sm-4" style="border-left: 1px dashed black; text-align: center;">
-                    <img src="Kmeans2.png" width="300" height="250" alt="pic" class="center"/> 
-                    <img src="DBSCAN.png" width="300" height="250" alt="pic" class="center"/> 
+            <div class="col-sm-4" style="border-left: 1px dashed black; text-align: left;">
+                    <h1>Clustering</h1>
             </div>
         </div>
+            <br>
+        <div class="container">
+              <div class="row">
+                  <div class="col-sm-4" style="text-align: center;">
+                    <img src="Kmenas2.png" width="300" height="300" alt="pic" class="center"/>                  
+                  </div>
+                  <div class="col-sm-4" style="text-align: center;">
+                    <img src="DBSCAN.png" width="300" height="300" alt="pic" class="center"/>                  
+                  </div>
+                  <div class="col-sm-4" style="text-align: center;">
+                    <img src="DBSCAN.png" width="300" height="300" alt="pic" class="center"/>                  
+                  </div>
+              </div>
+            <div class="row">
+                  <div class="col-sm-4" style="text-align: center;">
+                    <h4>KMeans Two Feature Analysis</h4>                 
+                  </div>
+                  <div class="col-sm-4" style="text-align: center;">
+                    <h4>DBSCAN</h4>                  
+                  </div>
+                  <div class="col-sm-4" style="text-align: center;">
+                    <h4>5 Component GMM</h4>                  
+                  </div>
+              </div>
+          </div>
+      <br>
+            
     </div>
       </div>
 

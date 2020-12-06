@@ -118,7 +118,7 @@
             <div class="row">
                 <div class="col-sm-8" style="text-align: right;">
                     <p>
-                      We are trying to find a correlation between the number of COVID-19 cases and the median days pending to sale (MDPS) using unsupervised learning, namely clustering algorithms so that we can eventually predict future MDPS values. This is a regression problem because our target is the numeric values of median days pending to sale. The range of our values is 7-80 days though we split them into categories for our clustering algorithms to reduce it. To do this, we are utilizing housing datasets from Zillow as well as a Johns Hopkins COVID-19 case dataset.
+                      We are trying to find a correlation between the number of COVID-19 cases and the median days pending to sale (MDPS) using unsupervised learning, namely clustering algorithms or any form of visualizations, so that we can eventually predict future MDPS values. This is a regression problem because our target is the numeric values of median days pending to sale. The range of our values is 7-80 days though we split them into categories for our clustering algorithms to reduce it. To do this, we are utilizing housing datasets from Zillow as well as a Johns Hopkins COVID-19 case dataset.
                     </p>
                 </div>
                 <div class="col-sm-4" style="border-left: 1px dashed black;">
@@ -135,7 +135,7 @@
                 </div>
                 <div class="col-sm-8" style="text-align: left;">
                     <p>
-                      The Zillow housing datasets were organized by metropolitan statistical areas (MSAs), and we chose the top 19 MSAs because they had the least amount of information missing due to being major cities such as New York City and Los Angeles. The top MSAs also generally experience a lot of movement due to their population sizes. Housing data points for each housing feature were provided on a weekly basis. To combine the Zillow housing datasets with the COVID dataset which gave daily case information by county, we summed up the points in a week to give a weekly total for the same week day, and we combined counties’ data within an MSA.
+                      The Zillow housing datasets were organized by metropolitan statistical areas (MSAs), and we chose the top 19 MSAs because they had the least amount of information missing due to being major cities such as New York City and Los Angeles. The top MSAs also generally experience a lot of movement due to their population sizes and high cost of living. Housing data points for each housing feature were provided on a weekly basis. To combine the Zillow housing datasets with the COVID dataset which gave daily case information by county, we summed up the points in a week to give a weekly total for the same week day, and we combined counties’ data within an MSA.
                     </p>
                 </div>
             </div>
@@ -166,7 +166,7 @@
                       We created correlation matrices to analyze the relationships between our features (median list price, median sale price, for-sale inventory, and COVID cases) and the target variable (MDSP). From our matrices we determined that we could get rid of median list price as a feature because it was highly correlated with median sale price (0.98). We decided to keep median sale price as a feature because median list price has the lower correlation with the target variable (-0.16 or -0.19) in all three models though median sale price still has a relatively low correlation with our target variable. Our final features were median sale price (MSP), for-sale inventory (FSI), and COVID cases.
                     </p>
                     <p>
-                      With our final features and target variable, we observed a positive correlation between MDPS and FSI. There was a slight positive correlation between COVID cases & MDPS and COVID cases & FSI. COVID cases had very little correlation with MSP. There was a slight negative correlation between MSP & FSI and MSP & MDPS.
+                      With our final features and target variable, we observed a positive correlation between MDPS and FSI. We think that this occurred since we analyzed a larger number of cities with a higher cost of living. The need for housing within these cities has fallen because work from home no longer requires employees to be within a commutable distance from their workplace. The number of houses going on sale within the cities has increased and no one has the need to move into the cities which has slowed the rate at which homes sell. At the same time, in the smaller number of cities we analyzed with a more suburban surrounding area, the inventory for sale there had decreased a bit because of work from home. This, in turn, would most likely decrease the days that an available house would remain on the market, because the demand would be increasing from the limited number of houses in that area.There was a slight positive correlation between COVID cases & MDPS and COVID cases & FSI. We think that this happened because the areas that had higher case counts were generally larger and denser cities, which is often where higher housing prices occur. In this sense, no one would want to move into the cities which would drive up the number of houses on the market and the length of time a house remained for sale. Furthermore, COVID cases had very little correlation with MSP and there was a slight negative correlation between MSP & FSI and MSP & MDPS. These negative correlations could probably relate to simple supply and demand. 
                     </p>
                 </div>
             </div>
@@ -190,27 +190,34 @@
             <div class="row">
                 <div class="col-sm-8" style="text-align: right;">
                   <p>
-                    The clustering algorithms that we used are PCA, KMeans, DBSCAN, and GMM. Our objectives for the algorithms were to find relationships between our features, determine the outliers, and to gain a better understanding of our datasets. For PCA, since we were only dealing with 2-3 features (housing data and/or COVID case data), we realized that we did not need its dimensionality reducing features, but it helped us visualize our data. We altered the range of values to the following to better visualize how values were clustered if at all:
+                    The algorithms that we attempted were PCA, KMeans, DBSCAN, and GMM. The reason we chose these algorithms was to find any relationships between our features, determine the outliers within our datasets, and to gain a better understanding of our datasets represented. We thought that using PCA would show us some form of linear regression that we were hoping would determine relationships that our data had. This would help us in our supervised learning portion of the project. We chose the three clustering algorithms because we were a little unsure about how to approach unsupervised learning with our datasets since each city had separate data that we combined into a larger set in order to run it through the algorithms, so we decided to attempt all three then analyze the results and see if anything came out of them; we were not sure if including the variance that our data contained because of the locations all lumped together as one set would have an effect on our results. DBSCAN in particular was for determining if our data contained any outliers.
                   </p> 
-                  <p>
-                    0: 0-19 days
-                  </p>
-                  <p>
-                    1: 20-39 days
-                  </p>
-                  <p>
-                    2: 40-59 days
-                  </p>
-                  <p>
-                    3: 60-79 days
-                  </p>
-                  <p>
-                    Graphing 2 principal components, we see that our target values (MDPS) are scattered across multiple clusters. For the Pre-COVID Housing Dataset, we can see that some of them generally stick to one area (0’s in the middle right, 2’s in the top left and bottom center, and 3’s in the top left) despite overlapping. Between the two PCA graphs during COVID, there doesn’t seem to be a clearer relationship with the combined housing and COVID dataset compared to the dataset with only the housing data.
-                  </p>
                 </div>
                 <div class="col-sm-4" style="border-left: 1px dashed black;">
-                    <h1>Clustering Algorithms</h1>
+                    <h1>Algorithms</h1>
                 </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-sm-4" style="test-alight: left;">
+                <p>For PCA, since we were only dealing with 2-3 features (housing data of median-days-pending and median list/sale price along with COVID case data depending on what time frame we were looking at), we realized that we did not need its dimensionality reducing feature. However, it did help us visualize our data and determine if any relationships existed between the data. We ended up creating 4 bins to divide up the median-days-pending data in order to better visualize how values were clustered, if at all. The following ranges were how we broke up our data:</p>
+                <p>
+                  0: 0-19 days
+                </p>
+                <p>
+                  1: 20-39 days
+                </p>
+                <p>
+                  2: 40-59 days
+                </p>
+                <p>
+                  3: 60-79 days
+                </p>
+                <p>The principal components took our features, which were MDPS, FSI, and eventually the COVID case count, and determined how correlated the two or three were before projecting them onto the axis. By looking at our graphs, we can see that solely housing data that was divided up between pre and during COVID is extremely scattered showing that there is no strong correlation between the MDPS based upon the FSI and MSP with large V-shapes stretching across the graphs (looking at the graphs labeled “PCA Pre-COVID Housing” and “PCA During COVID Housing”). Adding in the COVID data, there was less variance on principal component 2, with both components having a straighter line in the x and y directions, more L-shaped, that lingered around the 0 with a couple values floating away from it (shown on “PCA Combined Housing and COVID”). This demonstrated that adding in the COVID data introduced some form of correlation, although not the strongest, between the datasets while not having the case data meant practically no correlation between just the housing data.</p>
+              </div>
+              <div class="col-sm-8" style="border-left: 1px dashed black;">
+                    <h1>PCA</h1>
+              </div> 
             </div>
         </div>
       <br>

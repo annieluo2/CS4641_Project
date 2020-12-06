@@ -198,30 +198,7 @@
                 </div>
             </div>
             <br>
-            <div class="row">
-                <div class="col-sm-4" style="border-right: 1px dashed black;">
-                    <h1>PCA</h1>
-                </div>
-                <div class="col-sm-8" style="test-alight: left;">
-                <p>For PCA, since we were only dealing with 2-3 features (housing data of median-days-pending and median list/sale price along with COVID case data depending on what time frame we were looking at), we realized that we did not need its dimensionality reducing feature. However, it did help us visualize our data and determine if any relationships existed between the data. We ended up creating 4 bins to divide up the median-days-pending data in order to better visualize how values were clustered, if at all. The following ranges were how we broke up our data:</p>
-                <p>
-                  0: 0-19 days
-                </p>
-                <p>
-                  1: 20-39 days
-                </p>
-                <p>
-                  2: 40-59 days
-                </p>
-                <p>
-                  3: 60-79 days
-                </p>
-                <p>The principal components took our features, which were MDPS, FSI, and eventually the COVID case count, and determined how correlated the two or three were before projecting them onto the axis. By looking at our graphs, we can see that solely housing data that was divided up between pre and during COVID is extremely scattered showing that there is no strong correlation between the MDPS based upon the FSI and MSP with large V-shapes stretching across the graphs (looking at the graphs labeled “PCA Pre-COVID Housing” and “PCA During COVID Housing”). Adding in the COVID data, there was less variance on principal component 2, with both components having a straighter line in the x and y directions, more L-shaped, that lingered around the 0 with a couple values floating away from it (shown on “PCA Combined Housing and COVID”). This demonstrated that adding in the COVID data introduced some form of correlation, although not the strongest, between the datasets while not having the case data meant practically no correlation between just the housing data.</p>
-              </div> 
-            </div>
-        </div>
-      <br>
-        <div class="container">
+          <div class="container">
               <div class="row">
                   <div class="col-sm-4" style="text-align: center;">
                     <img src="PreHousing.png" width="300" height="300" alt="pic" class="center"/>                  
@@ -246,18 +223,30 @@
               </div>
           </div>
       <br>
-          <div class="container">
             <div class="row">
-                <div class="col-sm-8" style="text-align: right;">
-                  <p>Originally, we hoped that clustering using KMeans would show us clusters based on the MDPS and then by adding in the COVID data the clusters would fall in the same spots. This ended up not being the case because the features that we were using to cluster, MSP and FSI, didn’t have much relation to each other as determined in the correlation matrix. We encountered similar issues when attempting to do GMM. In the end, we attempted to evaluate the clusters by using F1 score, which calculates our model’s precision (proportion of correct to incorrect predictions) and recall (proportion of points that we correctly predicted). Since K-means clustering assigned random cluster numbers rather than attempting to create a cluster labeled for each metropolitan area for which we generated combined housing-COVID datasets for, we had F1 scores of 0.1 (signifying very low precision and recall) on each attempt to cluster using COVID cases and median days pending to sale in a metro area. Therefore, unless we can create clusters with the metro area labels, F1 score on our K-means clustering does not give us any useful insights.</p>
-                  <p>The graph labeled “K-means Two Feature Analysis” was an attempt to use K-means clustering (with 19 clusters) with the 19 metropolitan areas included over a 30 week period from January to August 2020 over the features of COVID cases and median days pending to sale. However, we could not find many generic correlations between COVID cases in a city and median days pending to sale, as many of our clusters ended up depicting either a constant case count or an insignificant variance in median days pending to sale. If we removed the weeks where a metro area had 0 cases, this could potentially provide more useful clusters, but would cause many discrepancies between the number of timepoints each city is represented by in the dataset.</p>
-                  <p>We used DBSCAN to find outliers when we clustered the median sale price and for-sale inventory. As we can see in the given plot labeled DBSCAN in the algorithms section, the purple points represent the outliers as they are the points which could not be fit into any cluster.</p>
-            </div>
-            <div class="col-sm-4" style="border-left: 1px dashed black; text-align: left;">
-                    <h1>Clustering</h1>
+                <div class="col-sm-4" style="border-right: 1px dashed black;">
+                    <h1>PCA</h1>
+                </div>
+                <div class="col-sm-8" style="test-alight: left;">
+                <p>For PCA, since we were only dealing with 2-3 features (housing data of median-days-pending and median list/sale price along with COVID case data depending on what time frame we were looking at), we realized that we did not need its dimensionality reducing feature. However, it did help us visualize our data and determine if any relationships existed between the data. We ended up creating 4 bins to divide up the median-days-pending data in order to better visualize how values were clustered, if at all. The following ranges were how we broke up our data:</p>
+                <p>
+                  0: 0-19 days
+                </p>
+                <p>
+                  1: 20-39 days
+                </p>
+                <p>
+                  2: 40-59 days
+                </p>
+                <p>
+                  3: 60-79 days
+                </p>
+                <p>The principal components took our features, which were MDPS, FSI, and eventually the COVID case count, and determined how correlated the two or three were before projecting them onto the axis. By looking at our graphs, we can see that solely housing data that was divided up between pre and during COVID is extremely scattered showing that there is no strong correlation between the MDPS based upon the FSI and MSP with large V-shapes stretching across the graphs (looking at the graphs labeled “PCA Pre-COVID Housing” and “PCA During COVID Housing”). Adding in the COVID data, there was less variance on principal component 2, with both components having a straighter line in the x and y directions, more L-shaped, that lingered around the 0 with a couple values floating away from it (shown on “PCA Combined Housing and COVID”). This demonstrated that adding in the COVID data introduced some form of correlation, although not the strongest, between the datasets while not having the case data meant practically no correlation between just the housing data.</p>
+              </div> 
             </div>
         </div>
-            <br>
+      <br>
+      <br>
         <div class="container">
               <div class="row">
                   <div class="col-sm-4" style="text-align: center;">
@@ -282,6 +271,18 @@
                   </div>
               </div>
           </div>
+          <div class="container">
+            <div class="row">
+                <div class="col-sm-8" style="text-align: right;">
+                  <p>Originally, we hoped that clustering using KMeans would show us clusters based on the MDPS and then by adding in the COVID data the clusters would fall in the same spots. This ended up not being the case because the features that we were using to cluster, MSP and FSI, didn’t have much relation to each other as determined in the correlation matrix. We encountered similar issues when attempting to do GMM. In the end, we attempted to evaluate the clusters by using F1 score, which calculates our model’s precision (proportion of correct to incorrect predictions) and recall (proportion of points that we correctly predicted). Since K-means clustering assigned random cluster numbers rather than attempting to create a cluster labeled for each metropolitan area for which we generated combined housing-COVID datasets for, we had F1 scores of 0.1 (signifying very low precision and recall) on each attempt to cluster using COVID cases and median days pending to sale in a metro area. Therefore, unless we can create clusters with the metro area labels, F1 score on our K-means clustering does not give us any useful insights.</p>
+                  <p>The graph labeled “K-means Two Feature Analysis” was an attempt to use K-means clustering (with 19 clusters) with the 19 metropolitan areas included over a 30 week period from January to August 2020 over the features of COVID cases and median days pending to sale. However, we could not find many generic correlations between COVID cases in a city and median days pending to sale, as many of our clusters ended up depicting either a constant case count or an insignificant variance in median days pending to sale. If we removed the weeks where a metro area had 0 cases, this could potentially provide more useful clusters, but would cause many discrepancies between the number of timepoints each city is represented by in the dataset.</p>
+                  <p>We used DBSCAN to find outliers when we clustered the median sale price and for-sale inventory. As we can see in the given plot labeled DBSCAN in the algorithms section, the purple points represent the outliers as they are the points which could not be fit into any cluster.</p>
+            </div>
+            <div class="col-sm-4" style="border-left: 1px dashed black; text-align: left;">
+                    <h1>Clustering</h1>
+            </div>
+        </div>
+            
       <br>
             
     </div>

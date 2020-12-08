@@ -234,10 +234,9 @@
                   <img src="poly1.png" />
                   <p> The RMSE plot is shown above and polynomial degree 1 has the lowest RMSE value. </p>
                   <img src="poly2.png" />
-                  <p>Here is our RMSE plot with covid and the polynomial degree one has the lowest RMSE but the difference between the RMSE values of the regression with and without covid features are negligible which tells us that the number of Covid cases is not the best deciding feature to predict median days to sale.
-
-                    We considered several different forms of supervised learning such as neural networks.  However, the problem we are looking into is a prediction problem and not a classification problem. The neural network we were planning to use was perceptron from scikit learn and it's mainly used for classification. 
-                    </p>
+                  <p>
+                      Here is our RMSE plot with covid and the polynomial degree one has the lowest RMSE but the difference between the RMSE values of the regression with and without covid features are negligible which tells us that the number of Covid cases is not the best deciding feature to predict median days to sale.
+                  </p>
                 </div>
             </div>
         </div>
@@ -266,9 +265,6 @@
                         The model seems to predict very poorly for the major cities other than New York, but the RMSE values are consistently slightly lower when COVID data is included as a feature. This could mean that COVID has a very very slight effect on the median days pending to sale feature, but the effect is nearly negligible.
                     </p>
                     <img src="lin3.JPG" width="80%" />
-                    <p>
-                        If we wanted to improve our results, we determined that we need more data during COVID. Maybe we could use datasets with daily data instead of weekly data. Also we might need to find a different housing data feature to predict instead of median days pending to sale. Our correlation matrices from the unsupervised learning portion did not show very strong correlations between median days pending to sale and COVID case data though they were slightly correlated with the value of 0.24.
-                    </p>
                 </div>
                 <div class="col-sm-4" style="border-left: 1px dashed black;">
                     <h1>Linear Regression</h1>
@@ -283,7 +279,16 @@
                     <h1>Conclusion</h1>
                 </div>
                 <div class="col-sm-8" style="text-align: left;">
-                    <p> something hi</p>
+                    <p>
+                        Overall, the algorithms that we used...
+                    </p>
+                    <p>
+                        We considered using other forms of supervised learning such as neural networks, but we decided against them because the problem we are looking into is a prediction problem and not a classification problem. The neural network we were planning to use was perceptron from scikit learn, and it is mainly used for classification. 
+                    </p>
+                    <p>
+                        To improve our results, we determined that we need more data during COVID. We could use datasets with daily data instead of weekly data. Also we might need to find a different housing data feature to predict instead of median days pending to sale. Our correlation matrices from the unsupervised learning portion did not show very strong correlations between median days pending to sale and COVID case data though they were slightly correlated with the value of 0.24.
+                    </p>
+                    <img src="CorrelationHousingCovid.png" width="60%" />
                 </div>
             </div>
         </div>

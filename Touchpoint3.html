@@ -60,9 +60,9 @@
           </button>
           <div class="dropdown-content">
             <a href="index.html">Home</a>
-            <a href="Touchpoint1.html">Touchpoint 1</a>
-            <a href="Touchpoint2.html">Touchpoint 2</a>
-            <a href="Touchpoint3.html">Touchpoint 3</a>
+            <a href="Touchpoint1.html">Proposal</a>
+            <a href="Touchpoint2.html">Midterm</a>
+            <a href="Touchpoint3.html">Final</a>
           </div>
         </div> 
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
@@ -78,11 +78,11 @@
                 <a href="#Lorem_Ipsum">top</a>
                 -->
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="#section1">section1</a>
+                    <a class="nav-link" style="color: black;" href="#section1">KNN Regression</a>
                 </li>
                 <br>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="#section2">section2</a>
+                    <a class="nav-link" style="color: black;" href="#section2">KNN Results Visualizer</a>
                 </li>
                 <br>
                 <li class="nav-item">
@@ -113,10 +113,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4" style="border-right: 1px dashed powderblue; text-align: right;">
-                    <h1>Section 1</h1>
+                    <h1>K-Nearest Neighbors (KNN) Regression</h1>
                 </div>
                 <div class="col-sm-8" style="text-align: left;">
-                  <p> something </p>
+                 Our use of K-Nearest Neighbors, or KNN, regression served two purposes.
+                  <h4> Part 1: Missing Data Imputation </h4>
+                  <p> The first was to impute missing values in our combined housing-COVID feature datasets. While this task could not be validated with a ground-truth, it allowed for complete datasets that could then be used with other Supervised Learning algorithms. The two major variables imputed were median days to pending sale (which was originally missing for the New York MSA for parts of June-July 2020) and For Sale Inventory (which had missing points in Riverside, CA, and Tampa, FL).</p>
+                  <h4> Part 2: Prediction of Trends </h4>
+                  <p>The second purpose of K-Nearest Neighbors was to predict the median days to pending sale of time points after October 3, 2020, the cutoff of our training set. We used a test set between October 3 and October 31, 2020, and attempted to predict the median days to pending sale for the testing weeks. After using the elbow method from 1-20 neighbors, the most optimal number of neighbors for NYC was 11, and the RMSE (root-mean-square-error) of predicting the days to pending sale of the testing data was 0.5 for 11 neighbors, which may be due to the relative predictability of housing trends in the New York City metro area, as well as the relative lack of deviation in median days to pending sale in New York after the pandemic started (which means that the nearest points to the testing data would likely also be during the pandemic). In other cities, these trends may not be the same, as local long-term trends, as well as COVID-related short term trends in housing demand, may vary. 
+                </p>
                 </div>
             </div>
         </div>
@@ -125,10 +130,33 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8" style="text-align: right;">
-                    <p> something </p>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          City
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                          <button class="dropdown-item" type="button">New York</button>
+                          <button class="dropdown-item" type="button">Los Angeles</button>
+                          <button class="dropdown-item" type="button">Chicago</button>
+                          <button class="dropdown-item" type="button">Atlanta</button>
+                        </div>
+                      </div>
+                      <div>
+                        <div id="nyc-res">
+                            <h2>New York, NY</h2>
+                            <h3>Optimal Neighbors: <b>11</b></h3>
+                            <h3>Median Days to Pending Sale</h3>
+                            <h4>Week of October 10: <b>29</b></h4>
+                            <h4>Week of October 17: 29 (actual 28)</h4>
+                            <h4>Week of October 24: 29 (actual 28)</h4>
+                            <h4>Week of October 31: <b>29</b></h4>
+                            <h5>RMSE: <b>0.5</b></h5>
+                        </div>
+                        <img src="nyc-results.png" height="400" width="80%" />
+                    </div>
                 </div>
                 <div class="col-sm-4" style="border-left: 1px dashed black;">
-                    <h1>Section 2</h1>
+                    <h1>KNN Results</h1>
                 </div>
             </div>
         </div>
@@ -137,10 +165,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4" style="border-right: 1px dashed powderblue; text-align: right;">
-                    <h1>Section 3</h1>
+                    <h1>Polynomial Regression</h1>
                 </div>
                 <div class="col-sm-8" style="text-align: left;">
-                  <p> something </p>
+                  <p> Our goal while doing polynomial regression was to find the model which leads to the lowest errors. We did this by doing polynomial regression on degrees 1-25 using our features For- Sale Inventory and Median-List Price to predict the median days to sale. </p>
+                  <img src="poly1.png" />
+                  <p> The RMSE plot is shown above and polynomial degree 1 has the lowest RMSE value. </p>
+                  <img src="poly2.png" />
+                  <p>Here is our RMSE plot with covid and the polynomial degree one has the lowest RMSE but the difference between the RMSE values of the regression with and without covid features are negligible which tells us that the number of Covid cases is not the best deciding feature to predict median days to sale.
+
+                    We considered several different forms of supervised learning such as neural networks.  However, the problem we are looking into is a prediction problem and not a classification problem. The neural network we were planning to use was perceptron from scikit learn and it's mainly used for classification. 
+                    </p>
                 </div>
             </div>
         </div>
@@ -149,10 +184,55 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8" style="text-align: right;">
-                  <p> something </p>
+                  <p> We began with simple linear regression by multiplying the two housing data features (median list price and for-sale inventory) together into one independent variable and using median days pending to sale as the dependent variable. </p>
+                  <img src="lin6.png" />
+                  <p>We found that using a train-test split of 90-10 produced the best results.
+                    RMSE: 19.4699.
+                    The RMSE value normalizes to about 36.74% of the range which signifies that the model is not very strong with making predictions.
+                    </p>
+                    <img src="lin5.png" />
+                <p>We realized that we could not combine COVID case data to the two housing features in a logical way for one independent variable, so we shifted to multiple linear regression.
+                    Housing data only
+                    RMSE: 18.214
+                    Normalized: 35.527%
+                    </p>
+                    <img src="lin4.png" />
+                <p>
+                    Housing and COVID
+RMSE: 18.187
+Normalized: 34.315%
+Including COVID data had a lower RMSE by .0509%
+The decrease in RMSE is so small that including the COVID case data does not seem to make a difference in the model's performance
+                </p>
+                <img src="lin3.png" />
+                <p>
+                    We decided to try standardization to help lower our RMSE values
+Housing data only
+RMSE: 1.0305
+Normalized RMSE: 25.140% vs 34.366%
+Housing and COVID
+RMSE: 1.0339
+Normalized RMSE: 25.223% vs 34.315%
+Standardization seemed to help reduce RMSE values by almost 9%. Differences between the two models' RMSE values are still pretty negligible
+These models are slightly better predictors compared to before, but they are still not that good.
+Determined that data could use KNN imputation for missing data points and improving our RMSE values
+Housing data only
+RMSE: 10.255
+Normalized RMSE: 19.35%
+Housing and COVID
+RMSE: 10.184
+Normalized RMSE: 19.22%
+Include the following table!!
+
+                </p>
+                <img src="lin2.png" />
+                <p>
+                    If we wanted to improve our results, we determined that we need more data during COVID. Maybe we could use datasets with daily data instead of weekly data. Also we might need to find a different housing data feature to predict instead of median days pending to sale. Our correlation matrices from the unsupervised learning portion did not show very strong correlations between median days pending to sale and COVID case data though they were slightly correlated with the value of 0.
+                </p>
+                <img src="lin1.png" />
                 </div>
                 <div class="col-sm-4" style="border-left: 1px dashed black;">
-                    <h1>Section 4</h1>
+                    <h1>Linear Regression</h1>
                 </div>
             </div>
         </div>

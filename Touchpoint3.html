@@ -246,52 +246,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8" style="text-align: right;">
-                  <p> We began with simple linear regression by multiplying the two housing data features (median list price and for-sale inventory) together into one independent variable and using median days pending to sale as the dependent variable. </p>
-                  <img src="lin6.png" />
-                  <p>We found that using a train-test split of 90-10 produced the best results.
-                    RMSE: 19.4699.
-                    The RMSE value normalizes to about 36.74% of the range which signifies that the model is not very strong with making predictions.
+                    <p>
+                        We began with simple linear regression by multiplying the two housing data features (median list price and for-sale inventory) together into one independent variable and using median days pending to sale as the dependent variable. We found that using a train-test split of 90-10 produced the best results for the New York city dataset. The RMSE value was about 19.4699 which normalizes to about 36.74% of the range which signifies that the model is not very strong with making predictions.
                     </p>
-                    <img src="lin5.png" />
-                <p>We realized that we could not combine COVID case data to the two housing features in a logical way for one independent variable, so we shifted to multiple linear regression.
-                    Housing data only
-                    RMSE: 18.214
-                    Normalized: 35.527%
+                    <img src="lin0.JPG" />
+                    <p>
+                        We realized that we could not combine COVID case data to the two housing features in a logical way for one independent variable, so we shifted to multiple linear regression.
                     </p>
-                    <img src="lin4.png" />
-                <p>
-                    Housing and COVID
-RMSE: 18.187
-Normalized: 34.315%
-Including COVID data had a lower RMSE by .0509%
-The decrease in RMSE is so small that including the COVID case data does not seem to make a difference in the model's performance
-                </p>
-                <img src="lin3.png" />
-                <p>
-                    We decided to try standardization to help lower our RMSE values
-Housing data only
-RMSE: 1.0305
-Normalized RMSE: 25.140% vs 34.366%
-Housing and COVID
-RMSE: 1.0339
-Normalized RMSE: 25.223% vs 34.315%
-Standardization seemed to help reduce RMSE values by almost 9%. Differences between the two models' RMSE values are still pretty negligible
-These models are slightly better predictors compared to before, but they are still not that good.
-Determined that data could use KNN imputation for missing data points and improving our RMSE values
-Housing data only
-RMSE: 10.255
-Normalized RMSE: 19.35%
-Housing and COVID
-RMSE: 10.184
-Normalized RMSE: 19.22%
-Include the following table!!
-
-                </p>
-                <img src="lin2.png" />
-                <p>
-                    If we wanted to improve our results, we determined that we need more data during COVID. Maybe we could use datasets with daily data instead of weekly data. Also we might need to find a different housing data feature to predict instead of median days pending to sale. Our correlation matrices from the unsupervised learning portion did not show very strong correlations between median days pending to sale and COVID case data though they were slightly correlated with the value of 0.
-                </p>
-                <img src="lin1.png" />
+                    <img src="lin2.png" />
+                    <p>
+                        Including COVID data had a lower normalized RMSE value by .0509%, but the decrease in RMSE is so small that including the COVID case data does not seem to make a difference in the model's performance. Additionally, the RMSE values were still about the same compared to the simple linear regression model.
+                    </p>
+                    <img src="lin1.JPG" />
+                    <p>
+                        Next, we tried standardizing our dataset to help lower our RMSE values. Standardization seemed to help reduce RMSE values by almost 9%. Differences between the two models' RMSE values were still pretty negligible though. These models are slightly better predictors compared to before, but they are still not that good. After further analysis, we determined that data could use KNN imputation for missing data points and improving our RMSE values.
+                    </p>
+                    <img src="lin4.JPG" />
+                    <p>
+                        The model seems to predict very poorly for the major cities other than New York, but the RMSE values are consistently slightly lower when COVID data is included as a feature. This could mean that COVID has a very very slight effect on the median days pending to sale feature, but the effect is nearly negligible.
+                    </p>
+                    <img src="lin3.JPG" />
+                    <p>
+                        If we wanted to improve our results, we determined that we need more data during COVID. Maybe we could use datasets with daily data instead of weekly data. Also we might need to find a different housing data feature to predict instead of median days pending to sale. Our correlation matrices from the unsupervised learning portion did not show very strong correlations between median days pending to sale and COVID case data though they were slightly correlated with the value of 0.24.
+                    </p>
                 </div>
                 <div class="col-sm-4" style="border-left: 1px dashed black;">
                     <h1>Linear Regression</h1>

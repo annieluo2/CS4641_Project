@@ -78,6 +78,9 @@
                 <a href="#Lorem_Ipsum">top</a>
                 -->
                 <li class="nav-item">
+                    <a class="nav-link" style="color: black;" href="#section0">Cross-Validation</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" style="color: black;" href="#section1">KNN Regression</a>
                 </li>
                 <br>
@@ -86,15 +89,15 @@
                 </li>
                 <br>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="#section3">section3</a>
+                    <a class="nav-link" style="color: black;" href="#section3">Polynomial Regression</a>
                 </li>
                 <br>  
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="#section4">section4</a>
+                    <a class="nav-link" style="color: black;" href="#section4">Linear Regression</a>
                 </li>
                 <br>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black;" href="#section5">section5</a>
+                    <a class="nav-link" style="color: black;" href="#section5">Conclusion</a>
                 </li>
             </ul>
         </div>
@@ -192,19 +195,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8" style="text-align: right;">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          City
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                          <button class="dropdown-item" type="button">New York</button>
-                          <button class="dropdown-item" type="button">Los Angeles</button>
-                          <button class="dropdown-item" type="button">Chicago</button>
-                          <button class="dropdown-item" type="button">Atlanta</button>
-                        </div>
-                      </div>
+                    <div class="row">
+                        <a id="la" class="btn btn-primary btn-lg bg-button" style="border-color: #bee5eb; background-color: #62bc86; color:white; cursor: pointer;" onclick="la()"
+                        role="button">Los Angeles</a>
+                        <a id="nyc" class="btn btn-primary btn-lg bg-button" style="border-color: #bee5eb; background-color: #62bc86; color:white; cursor: pointer;" onclick="nyc()"
+                        role="button">New York</a>
+                        <a id="chi" class="btn btn-primary btn-lg bg-button" style="border-color: #bee5eb; background-color: #62bc86; color:white; cursor: pointer;" onclick="chi()"
+                        role="button">Chicago</a>
+                    </div>
                       <div>
-                        <div id="nyc-res">
+                        <div id="nyc-res" style="display: none">
                             <h2>New York, NY</h2>
                             <h3>Optimal Neighbors: <b>11</b></h3>
                             <h3>Median Days to Pending Sale</h3>
@@ -213,12 +213,53 @@
                             <h4>Week of October 24: 29 (actual 28)</h4>
                             <h4>Week of October 31: <b>29</b></h4>
                             <h5>RMSE: <b>0.5</b></h5>
+                            <img src="nyc-results.png" height="400" width="80%" />
                         </div>
-                        <img src="nyc-results.png" height="400" width="80%" />
+                        <div id="la-res" style="display: none">
+                            <h2>Los Angeles, CA</h2>
+                            <h3>Optimal Neighbors: <b>1</b></h3>
+                            <h3>Median Days to Pending Sale</h3>
+                            <h4>Week of October 10: 13 (actual 12)</h4>
+                            <h4>Week of October 17: 13 (actual 12)</h4>
+                            <h4>Week of October 24: 13 (actual 12)</h4>
+                            <h4>Week of October 31: 13 (actual 12)</h4>
+                            <h5>RMSE: <b>1.0</b></h5>
+                            <img src="la-results.png" height="400" width="80%" />
+                        </div>
+                        <div id="chi-res" style="display: none">
+                            <h2>Chicago, IL</h2>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h2>Without COVID</h2>
+                                    <br>
+                                    <h3>Optimal Neighbors: <b>5</b></h3>
+                                    <h3>Median Days to Pending Sale</h3>
+                                    <h4>Week of October 10: <b>12</b></h4>
+                                    <h4>Week of October 17: 13 (actual 12)</h4>
+                                    <h4>Week of October 24: 14 (actual 13)</h4>
+                                    <h4>Week of October 31: 14 (actual 13)</h4>
+                                    <h5>RMSE: <b>0.75</b></h5>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h2>With COVID</h2>
+                                    <br>
+                                    <h3>Optimal Neighbors: <b>1</b></h3>
+                                    <h3>Median Days to Pending Sale</h3>
+                                    <h4>Week of October 10: <b>12</b></h4>
+                                    <h4>Week of October 17: <b>12</b></h4>
+                                    <h4>Week of October 24: 12 (actual 13)</h4>
+                                    <h4>Week of October 31: 12 (actual 13)</h4>
+                                    <h5>RMSE: <b>0.5</b></h5>
+                                </div>
+                            </div>
+                            <img src="chi-results.png" height="400" width="80%" />
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-4" style="border-left: 1px dashed black;">
                     <h1>KNN Results</h1>
+                    <p>Explanation of visuals: In the RMSE graph, red factors in COVID while green doesn't. In the 2D and 3D graphs, red dots are training weeks, and green are our testing weeks.</p>
+                    <p>In the RMSE graph, where there is only one point for a given number of neighbors, this means that COVID data played no difference in RMSE.</p>
                 </div>
             </div>
         </div>
@@ -293,6 +334,33 @@
             </div>
         </div>
     </div>
+    <script>
+        function la() {
+            document.getElementById("la-res").style.display = "block";
+            document.getElementById("nyc-res").style.display = "none";
+            document.getElementById("chi-res").style.display = "none";
+            document.getElementById("la").style.display = "none";
+            document.getElementById("nyc").style.display = "block";
+            document.getElementById("chi").style.display = "block";
+        }
+
+        function nyc() {
+            document.getElementById("nyc-res").style.display = "block";
+            document.getElementById("la-res").style.display = "none";
+            document.getElementById("nyc").style.display = "none";
+            document.getElementById("la").style.display = "block";
+            document.getElementById("chi").style.display = "block";
+        }
+
+        function chi() {
+            document.getElementById("nyc-res").style.display = "none";
+            document.getElementById("la-res").style.display = "none";
+            document.getElementById("chi-res").style.display = "block";
+            document.getElementById("nyc").style.display = "block";
+            document.getElementById("la").style.display = "block";
+            document.getElementById("chi").style.display = "none";
+        }
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
